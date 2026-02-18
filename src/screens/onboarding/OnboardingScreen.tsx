@@ -34,21 +34,16 @@ export default function OnboardingScreen({ navigation }: Props) {
   }
 
   function finishOnboarding() {
+    // Dispatch the profile — RootNavigator will automatically switch to Main
+    // once onboardingComplete is true. No manual navigation.replace needed.
     dispatch({
       type: 'COMPLETE_ONBOARDING',
       payload: {
         spiritualPath: intention,
         depthLevel: familiarity,
         contentPreference: preference,
-        morningTime: '07:00',
-        exploredConcepts: [],
-        completedStories: [],
-        completedPractices: [],
-        journalEntries: [],
-        createdAt: new Date().toISOString(),
       },
     });
-    navigation.replace('Main');
   }
 
   return (

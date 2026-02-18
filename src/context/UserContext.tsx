@@ -46,10 +46,24 @@ function reducer(state: UserState, action: Action): UserState {
       return { ...state, profile: action.payload };
 
     case 'COMPLETE_ONBOARDING':
-      if (!profile) return state;
+      // Profile is null at this point — create it from scratch using the payload.
       return {
         ...state,
-        profile: { ...profile, ...action.payload, onboardingComplete: true },
+        profile: {
+          id: Date.now().toString(),
+          onboardingComplete: true,
+          spiritualPath: 'undecided',
+          depthLevel: 'beginner',
+          contentPreference: 'stories',
+          morningTime: '07:00',
+          exploredConcepts: [],
+          completedStories: [],
+          completedPractices: [],
+          journalEntries: [],
+          createdAt: new Date().toISOString(),
+          // Spread payload last so user choices override the defaults above.
+          ...action.payload,
+        } as UserProfile,
       };
 
     case 'SET_MOOD':
