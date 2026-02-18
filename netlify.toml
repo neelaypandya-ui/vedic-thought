@@ -1,0 +1,9 @@
+[build]
+  command = "npx expo export --platform web"
+  publish = "dist"
+
+# SPA fallback — lets React Navigation handle all routes client-side
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
