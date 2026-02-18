@@ -73,6 +73,15 @@ The app draws from the canonical Vedic corpus:
 - **Yoga Sutras of Patanjali** — Meditation framework
 - **Supplementary** — Mahabharata, Ramayana, Puranas (narrative context only)
 
+## Deployment
+
+| Target | URL |
+|---|---|
+| Live app | https://vedic-wisdom.netlify.app |
+| GitHub | https://github.com/neelaypandya-ui/vedic-thought |
+
+Deployments are automatic — pushing to `master` triggers a Netlify rebuild via `netlify.toml`.
+
 ---
 
 *"Asato mā sadgamaya — Lead me from the unreal to the real."*
